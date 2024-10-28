@@ -13,4 +13,9 @@ if(input) {
 }
 
 console.log("OPTION: ", option)
-console.log("INPUT: ", input)
+////////////////////////////////
+
+const lightColor = "GREEN";
+// Experssion ? IF_TRUE : IF_FALSE
+const action = lightColor === "GREEN" ? "GO GO GO AND WIN!!!" : "STOPPPPP RED LIGHT!!!!"
+console.log(action)

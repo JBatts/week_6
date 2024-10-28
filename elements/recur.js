@@ -20,5 +20,9 @@ fruit = ["apple", "grapes", "cherry"]
 
 function show(list) {
     const one = list.pop();
-    if(one)
+    if(one !== undefined){
+        console.log(one);
+        show(list);
+    }
 }
+show(fruit)
