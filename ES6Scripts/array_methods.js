@@ -11,6 +11,8 @@ let cart = [
 // Use map() to create an array of item names
 let itemList = cart.map(cartItem => cartItem.item);
 
+
+itemList.sort()
 // Use forEach() to display the list of item names
 itemList.forEach(itemName => console.log(itemName))
 
@@ -20,5 +22,3 @@ let totalCost = cart.reduce((total, cartItem) => {
 }, 0);
 
 console.log(`Total Cost of all Items: $${totalCost.toFixed(2)}`)
-
-

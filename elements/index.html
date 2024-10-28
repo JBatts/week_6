@@ -10,24 +10,28 @@
 <body>
     <h1>Elements Baby!</h1>
     <script>
-        const fruit = ["apple", "banana", "cherrry"]; 
+        const fruit = ["apple", "banana", "cherrry"]; // create array
 
         function addText(content, index) {
-            // const d = document.createElement("div");
-            // d.innerText = index + content;
-            // document.body.appendChild(d)
-
+            const number = index === undefined ? "" : index + 1; // Ternary
+            const prefix = number === "" ? "" : number + " - ";
             // Append to existing html
-            document.body.innerHTML += index + " - " + content + "<br>";
+            document.body.innerHTML += prefix + content + "<br>";
         }
 
-        addText("hello", 999); // Manually pass a number as argument
-        addText("We Live!", 10);
+        function addListToPage(name, list) {
+            addText(`<BR>===${name}===`)
+            list.forEach(addText); // Passes value, index, array
+        }
 
-        fruit.forEach(addText); // Apply add function to each
+        // addText("hello", 999); // Manually pass a number as argument
+        // addText("We Live!", 10);
 
-        ["bob", "carol", "ted", "alice"].forEach(addText);
+        // fruit.forEach(addText); // Apply add function to each
 
+        // ["bob", "carol", "ted", "alice"].forEach(addText);
+        addListToPage("FRUIT", fruit)
+        addListToPage("PEOPLE", ["Bobby", "Timmy", "Baby Boys", "The Juck"])
     </script>
 </body>
 
