@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <h1>Elements Baby!</h1>
+    <script>
+        const fruit = ["apple", "banana", "cherrry"]; 
+
+        function addText(content, index) {
+            // const d = document.createElement("div");
+            // d.innerText = index + content;
+            // document.body.appendChild(d)
+
+            // Append to existing html
+            document.body.innerHTML += index + " - " + content + "<br>";
+        }
+
+        addText("hello", 999); // Manually pass a number as argument
+        addText("We Live!", 10);
+
+        fruit.forEach(addText); // Apply add function to each
+
+        ["bob", "carol", "ted", "alice"].forEach(addText);
+
+    </script>
+</body>
+
+</html>

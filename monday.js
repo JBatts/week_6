@@ -1,8 +1,13 @@
 
 const fruit = ["apple", "banana", "cherrry"];
 
-fruit.forEach((f, i, a) => console.log(f));
+fruit.forEach(f => console.log(f));
 
+function print(item){
+    console.log(item)
+}
+
+fruit.forEach(print); // Note lack of parenthese after function name
 
 // No Variable
 [111, 222, 333].forEach(c => console.log(c));
