@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="imageGroup.css">
+</head>
+<body>
+    <div class="imageGroup">
+        <img src="../data/pet-images/spooky.jpg" width="300px"/>
+        <p>We got some kind of fuffly creature</p>
+        </div>
+
+    <script>
+        window.onload = function() {
+
+            const imageGroup = document.getElementsByClassName("imageGroup")
+
+            Array.from(imageGroup).forEach(i => {
+                i.style.border = "4px solid red";
+            });
+        }
+
+        const imagesWithoutAlt = document.querySelectorAll('img:not([alt])')
+        imagesWithoutAlt.forEach(img => {
+            img.setAttribute('alt', 'graffiti image')
+        })
+    </script>
+</body>
+</html>
