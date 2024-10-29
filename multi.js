@@ -13,11 +13,11 @@ teamMembers.map((team) => team.join(", ")).forEach((person, index) => console.lo
 
 
 // Generic for re-use in itils.js
-const commas = a => a.join(", ");
-const print = s => console.log(s)
+const commas = list => list.join(", ");
+const print = text => console.log(text)
 
 // Special only one purpose in teams.js
-const team = (r, i) => `Team ${i + 1} - (${r})`
+const team = (roster, index) => `Team ${index + 1} - (${roster})`
 
 // Put it all together in app.js
 teamMembers.map(a=> a.sort()).map(commas).map(team).forEach(print)

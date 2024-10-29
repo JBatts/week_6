@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+
+<body>
+    <h1>It is Time for the Timer!</h1>
+    <div id="time"></div>
+    <script>
+        let t = 0;
+        let limit = 15
+        function step() {
+            time.innerText = limit - t; // To count up have time.innerText = t;
+            t++;
+            
+            if (t <= limit) {
+                setTimeout(step, 1000) // Recurse
+            } else {
+                alert(`Time is all up dum dum`)
+            }
+        }
+        step();
+    </script>
+</body>
+
+</html>
