@@ -12,9 +12,10 @@ let cart = [
 let itemList = cart.map(cartItem => cartItem.item);
 
 
-itemList.sort()
+itemList.sort() // Puts it in alphabetical order
+
 // Use forEach() to display the list of item names
-itemList.forEach(itemName => console.log(itemName))
+itemList.forEach(itemName => console.log(itemName)) 
 
 
 let totalCost = cart.reduce((total, cartItem) => {
