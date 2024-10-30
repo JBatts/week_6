@@ -4,19 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <body>
     <h1>Select an Image to Display</h1>
     <label for="imageSelect">Choose an image:</label>
     <select id="imageSelect">
-        <option value="../data/pet-images/kitkit.jpg">The Cool Kitty</option>
+        <!-- <option value="../data/pet-images/kitkit.jpg">The Cool Kitty</option>
         <option value="../data/pet-images/lilmiss.jpg">The Devious Kitty</option>
-        <option value="../data/pet-images/piper.jpg">Piper the Good Boy</option>
+        <option value="../data/pet-images/piper.jpg">Piper the Good Boy</option> -->
     </select>
 
     <button id="addImg">See Image</button>
     <button id="removeImg">Clear Image</button>
     
-    <div class="imgContainer"></div>
+    <div id="imgContainer" class ="imgContainer"></div>
+
+    <script src="imagesFile.js"></script>
+
+    <script>
+        
+       window.onload = function(){
+        const imageSelect = document.getElementById("imageSelect")
+        const addImg = document.getElementById("addImg")
+        const removeImg = document.getElementById("removeImg")
+        const imgContainer = document.getElementById("imgContainer")
+
+        // Populate the dropdown with options form imageFiles
+        imageFiles.forEach((image, index)=>{
+            const option = document.createElement("option")
+            option.value = image.name; // Set the value to the image source path
+            option.textContent = image.description; // Set the display text 
+            imageSelect.appendChild(option); // Append each option to the selct element
+        } );
+
+        addImg.onclick = ()=> {
+            const selectedIndex = imageSelect.selectedIndex
+            if(selectedIndex >= 0) {
+                const selectedImage = imageFiles[selectedIndex];
+
+                // Creat an image element and set the src and alt properties
+                const img = document.createElement("img")
+                img.src = selectedImage.name;
+                img.alt = selectedImage.description;
+                img.style.width = "300px"
+                imgContainer.appendChild(img)
+            }
+        };
+
+        // Event handler for "Clear Image" button
+        removeImg.onclick = ()=> {
+          imgContainer.innerHTML = ""; // Clear the images div  
+        }
+        
+       }
+
+
+    </script>
 </body>
 </html>

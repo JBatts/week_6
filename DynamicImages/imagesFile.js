@@ -1,4 +1,5 @@
 let imageFiles = [
-    {name: "images/dog.jpg", description: "A cute dog"},
-    {name: "images/cat.jpg", description: "A cute car"},
+    {name: "../data/pet-images/spooky.jpg", description: "Adventerous Kitty"},
+    {name: "../data/pet-images/kitkit.jpg", description: "A Demure Kitty"},
+    {name: "../data/pet-images/lilmiss.jpg", description: "A Devious Kitty"},
     ];
