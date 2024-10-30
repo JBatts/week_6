@@ -1,0 +1,52 @@
+<body>
+    <script>
+        // Function to generate a random integer between 'start' and 'stop'
+        function getInteger(start, stop) {
+            const r = Math.random() * Math.random() * Math.random(); // Generate a ranomd number between 0 and 1
+            const i = Math.round((r * (stop - 1)) + start); // Scale the number to the desired range and round it
+            console.log(i)
+            return i; // Return the random integer
+        }
+
+        // document.body.innerText = getInteger(1, 6)
+        const moles = []; // Mole model (Array/List)
+        const LIMIT = 12; // Set the max amount of moles
+
+        // Loop to initialize each mole with random x, y cords and set death status to false
+        for (let n = 0; n < LIMIT; n++) { 
+            moles.push({
+                x: getInteger(0, 99), // Random x position in viewport width (vw)
+                y: getInteger(0, 99), // Random y position in viewport width (vw)
+                dead: false // Mole is alive (not clicked yet)
+            });
+        }
+
+        // Event handler to handle the mole click
+        function onClickMole(event) {
+            moles[event.target.dataset.index].dead = true; // Mark the clicked mole as dead
+            render(); // Re-render to update the display of moles
+        }
+
+        // Function to create a mole element based on its properties
+        function getMole(mole, index) {
+            const e = document.createElement("img"); // Create an image element for a mole
+            e.dataset.index = index; // Sets a data attribute to track the mole's index (data-index = index)
+            e.src = moles[index].dead ? "x.png" : "mole.png"; // Show a X if dead, show mole if alive
+            e.style.left = mole.x + "vw"; // Set x position in the viewport width
+            e.style.top = mole.y + "vw"; // Set y position in the viewport width
+            e.style.width = "32px"; // Set width of mole image
+            e.style.position = "absolute"; // Position mole absolutely for random placement
+            e.addEventListener("click", onClickMole) // Attach click even to handle mole being called
+            return e // Return the created mole element
+        }
+
+        // Function to render all moles on the page
+        function render() { // Draw
+            console.log("RENDERING") // Log a message each time the render function is called
+            document.body.innerHTML = "" // Clear the body content
+            moles.forEach((m, i) => { document.body.appendChild(getMole(m, i)) }); // Loop through each mole and append it to the body
+        }
+
+        render(); // Initial render call to display moles when the page loads
+    </script>
+</body>
