@@ -1,0 +1,49 @@
+<body>
+    <h1> Welcome to the Web Demo</h1>
+    <h2> Basketball Teams</h2>
+    <table border="10">
+        <thead>
+            <tr>
+                <th>Team Name</th>
+                    
+                <th>Rank</th>
+            </tr>
+        </thead>
+        <tbody id="teamsBody"></tbody>
+    </table>
+    <script>
+        // Data
+        const teamsList = [
+            {teamName: "Atlanta Hawks", rank: 12},
+            {teamName: "Orlando Magic", rank: 11},
+            {teamName: "Chicago Bulls", rank: 10},
+            {teamName: "Portland Trail Blazer", rank: 9},
+            {teamName: "Detriot Pistons", rank: 8},
+        ]; // End of Statement
+
+        // Create Html document objects programatically
+        // For each object in the array
+        // Create a row of data for the tbody
+
+        function createTeamRow(teamObject){
+            // Creates the nessecary HTML tag ("tr")
+            const trTeam = document.createElement("tr");
+            // Create the children HTML tags ("td")
+            const tdTeamName = document.createElement("td");
+            const tdRank = document.createElement("td");
+            
+            // Places the data from the object passed through (teamObject)
+            // Use .innerText to write the name and rank through script
+            tdTeamName.innerText = teamObject.teamName;
+            tdRank.innerText = teamObject.rank;
+
+            // Populate the table with the data (Still need to add to page)
+            trTeam.appendChild(tdTeamName);
+            trTeam.appendChild(tdRank);
+            // Final step to add all the infomation to the page through the id "teamsBody"
+            teamsBody.appendChild(trTeam);
+        };
+
+        teamsList.forEach(createTeamRow) // Loop for each team show team name and rank
+    </script>
+</body>

@@ -127,7 +127,7 @@ console.log(result); // Logs 36
 // IIFE - Immediately invoked function experssion (Logs 36) - GROSS
 console.log(((a,b)=>a+b)(12,24)); 
 
-// Deprecated 
+// Deprecated
 // Schedule for removal (Too Old)
 
 // Coding Youtubers
